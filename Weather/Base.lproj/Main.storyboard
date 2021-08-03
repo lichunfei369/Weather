@@ -23,7 +23,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Jsy-XD-zq6" kind="presentation" modalPresentationStyle="fullScreen" id="MRi-UU-krN"/>
+                                    <segue destination="Jsy-XD-zq6" kind="presentation" modalPresentationStyle="automatic" id="MRi-UU-krN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyK-1P-EE8">
@@ -66,7 +66,7 @@
             <objects>
                 <viewController id="Jsy-XD-zq6" customClass="QViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kfp-0c-2vG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AlG-i4-QGE">
@@ -76,9 +76,12 @@
                                 <state key="normal" image="power" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                 </state>
+                                <connections>
+                                    <action selector="diss:" destination="Jsy-XD-zq6" eventType="touchUpInside" id="owb-hb-kZc"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ire-Oi-wtd">
-                                <rect key="frame" x="116" y="140" width="182" height="36"/>
+                                <rect key="frame" x="116" y="96" width="182" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前城市:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIb-Ea-Kkk">
                                         <rect key="frame" x="0.0" y="0.0" width="128.5" height="36"/>
@@ -95,7 +98,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zru-VV-AsW">
-                                <rect key="frame" x="83" y="236" width="248" height="79"/>
+                                <rect key="frame" x="83" y="192" width="248" height="79"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入天气" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Yn-0D-GnQ">
                                         <rect key="frame" x="0.0" y="0.0" width="248" height="34"/>
@@ -105,6 +108,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSr-Yo-r4t">
                                         <rect key="frame" x="0.0" y="49" width="248" height="30"/>
                                         <state key="normal" title="查询天气"/>
+                                        <connections>
+                                            <action selector="query:" destination="Jsy-XD-zq6" eventType="touchUpInside" id="wvK-su-rh5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -119,6 +125,10 @@
                             <constraint firstItem="ire-Oi-wtd" firstAttribute="top" secondItem="eFe-rI-l5b" secondAttribute="top" constant="96" id="hq6-ZO-1fg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currenTX" destination="0Yn-0D-GnQ" id="oDf-gD-xJ9"/>
+                        <outlet property="currentCityLB" destination="7X9-w9-J3n" id="D4y-eL-bz4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYc-Ga-Nf4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
